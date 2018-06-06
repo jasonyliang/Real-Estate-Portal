@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .import Property, Location
+from .models import Property, Location
 
 # Register your models here.
 
