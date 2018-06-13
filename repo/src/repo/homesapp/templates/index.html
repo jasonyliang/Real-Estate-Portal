@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block body %}
 {% for location in object_list %}
-<a href="#">{{location.location_name}}</a>
+<a href="{{location.id}}">{{location.location_name}}</a></br>
 {% endfor %}
+{% endblock %}

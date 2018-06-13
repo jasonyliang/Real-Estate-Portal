@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% for place in location.property_set.all %}
+    <a href="{{place.id}}">{{ place.property_name}}</a>
+
+{% endfor%}
+{% endblock %}
