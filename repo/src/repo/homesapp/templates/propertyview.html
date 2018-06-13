@@ -1,6 +1,79 @@
 {% extends 'base.html' %}
-
 {% block body %}
-{{ property.property_name }} </br>
-{{ property.area }}
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class = 'row'>
+            <div class = 'col-md-1'>
+            </div>
+            <div class = 'col-md-3'>
+                <div class = "thumbnail">
+                    <img src="{{property.image_url}}" height = 400 width = 360>
+                    <div class = "caption">
+                        <p>{{property.property_name}}</p>
+                    </div>
+                </div>
+            </div> 
+            <div class = 'col-md-8'>
+                <div class = "container-fluid">
+                    <div class = "panel-group">
+                        <div class='panel panel-primary'>
+                            <div class="panel-heading">property Details</div>
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label><b>Area SQFT</b></label>
+                                            </td>
+                                            <td>
+                                                {{property.area}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>
+                                                    <label><b>PriceT</b></label>
+                                                </td>
+                                                <td>
+                                                    {{property.price}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>
+                                                        <label><b>Direction</b></label>
+                                                    </td>
+                                                    <td>
+                                                        {{property.direction}}
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>
+                                                        <label><b>Floor</b></label>
+                                                    </td>
+                                                    <td>
+                                                        {{property.floor}}
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>
+                                                        <label><b>Address</b></label>
+                                                    </td>
+                                                    <td>
+                                                        {{property.postadd}}
+                                                    </td>
+                                                </tr>
+                                    </tbody>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
 {% endblock %}
