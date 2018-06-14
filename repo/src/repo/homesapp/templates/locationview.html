@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
+
 <html>
     <head></head>
     <body>
@@ -8,6 +9,7 @@
         <div class='col-md-8'>
             <h1>Properties in {{location.location_name}}</h1>
             <div class = "panel-group">
+            {% for place in location.property_set.all %}
                 <div class = "panel panel-primary">
                     <div class = "panel-heading">{{place.property_name}}</div>
                     <div class = "panel-body">
@@ -18,22 +20,38 @@
                             <table class = table>
                                 <tbody>
                                     <tr>
-                                        <td><label><b></b></label></td>
+                                        <td><label><b>Area SQFT</b></label></td>
+                                        <td>{{place.area}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label><b>Price</b></label></td>
+                                        <td>{{place.price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label><b>No. of Floors</b></label></td>
+                                        <td>{{place.floors}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label><b>Address</b></label></td>
+                                        <td>{{place.postadd}}</td>
+                                    </tr>
+                                    <tr>
                                         <td></td>
+                                        <td></td>
+                                        <td>
+                                            <a class = "btn btn-success" href="{{place.id}}">{{ place.property_name}}</a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-
-                        </div>
                     </div>
                 </div>
+                {% endfor%}
             </div>
         </div>
     </body>
 </html>
-{% for place in location.property_set.all %}
-    <a href="{{place.id}}">{{ place.property_name}}</a>
 
-{% endfor%}
+
 {% endblock %}
