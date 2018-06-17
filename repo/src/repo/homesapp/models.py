@@ -18,6 +18,7 @@ class Property(models.Model):
     floors = models.CharField(max_length = 200)
     postadd = models.CharField(max_length = 200)
     image_url = models.CharField(max_length = 500)
+    
 
     def __str__(self):
         return self.property_name
